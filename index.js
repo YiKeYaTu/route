@@ -193,8 +193,10 @@
         if (typeof routeObj === 'object' && typeof routeObj.callback === 'function') {
             this.isRunningCallback = true;
             routeObj.callback.call(context, this._next.bind(this));
+            return true;
         } else {
             this.isRunningCallback = false;
+            return false;
         }
     }
     History.prototype._match = function (previousLocation) {
@@ -228,7 +230,7 @@
             prvMatchRoute.desFn && prvMatchRoute.desFn();
         }
         this.callbackArr = callbackArr;
-        if (!this.isRunningCallback) this._next(previousLocation);
+        !this.isRunningCallback && this._next(previousLocation);
     }
     History.prototype.add = function (previousPath, routePath, callback) {
         if (this.routePoor[routePath]) {
@@ -288,6 +290,8 @@
         location = rootLocation + resolveRoutePath(location);
         return prvLocation === location;
     }
+    Context.prototype.set = set
+    Context.prototype.get = get
     /*
     *   Loader 类 包含加载方法
     */
@@ -390,8 +394,6 @@
         var app = {
             Router: Router,
             use: use,
-            set: set,
-            get: get,
             capture: controllers.capture.bind(controllers),
             redirect: controllers.push.bind(controllers),
             getRootLocation: getRootLocation,

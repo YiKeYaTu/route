@@ -1,0 +1,24 @@
+{
+  "name": "dbind-router-base",
+  "version": "1.0.1",
+  "description": "dbind路由组件插件式引擎",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YiKeYaTu/route.js.git"
+  },
+  "keywords": [
+    "前端",
+    "路由",
+    "router"
+  ],
+  "author": "casles",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/YiKeYaTu/route.js/issues"
+  },
+  "homepage": "https://github.com/YiKeYaTu/route.js#readme"
+}
